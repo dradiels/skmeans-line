@@ -160,7 +160,7 @@ function(x, y = NULL)
     x <- row_normalize(x)
     if(!is.null(y))
         y <- row_normalize(y)
-    pmax(1 - g_tcrossprod(x, y), 0)
+    abs(pmax(1 - g_tcrossprod(x, y), 0))
 }
 
 ### * skmeans_family
